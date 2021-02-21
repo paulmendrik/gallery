@@ -27,6 +27,7 @@ export default function About({page}) {
     )
 
 }
+
 export async function getServerSideProps(){
   const page = await getAboutPage();
   return {

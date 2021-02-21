@@ -7,20 +7,19 @@ import { urlFor } from 'lib/api';
 import client from 'lib/sanity';
 
 
-export default function Article(props) {
-  const { title, image, content} = props
+export default function Article({data}) {
     return (
         <>
         <Navigation/>
         <Row justify="center">
         <Col span={20}>
         <div>
-        <h1 className="title">{title}</h1>
+        <h1 className="title">{data.title}</h1>
         </div>
         <Col span={24} className="press">
-        <img src={urlFor(image).url()} width={400} height={400} alt={title} />  
-        <BlockContent blocks={content} />
-        <Button><Link as={`/press/`} href="/press/"><a>Back</a></Link></Button>
+        <img src={urlFor(data.image).url()} width={400} height={400} alt={data.title} />  
+        <BlockContent blocks={data.content} />
+        <Button><Link href="/press"><a>Back</a></Link></Button>
         </Col>
         </Col>
         </Row>
@@ -29,13 +28,35 @@ export default function Article(props) {
 
 }
 
-const query = groq`*[_type == "press" && slug.current == $slug][0]{
+const pressQuery = `
+*[_type == 'press' && slug.current == $slug][0] {
+  'slug': slug.current,
   title,
-  image,
-  content
-}`
+   image,
+   content,
+ }
+`
 
-Article.getInitialProps = async function(context) {
-  const { slug = "" } = context.query
-  return await client.fetch(query, { slug })
+export async function getStaticProps({ params }) {
+  const { slug = "" } = params
+  const data = await client.fetch(pressQuery, { slug })
+  return {
+    revalidate: 60,
+    props: {
+      data,
+    }
+  }
+}
+
+export const getStaticPaths = async () => {
+  const paths = await client.fetch(groq`
+    *[_type == "press"]{
+      "params": { "slug": slug.current }
+    }
+  `)
+  
+  return {
+    paths,
+    fallback: false,
+  }
 }
