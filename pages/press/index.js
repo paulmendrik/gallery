@@ -9,7 +9,7 @@ export default function Press( {data} ) {
     <>
     <Navigation/>
     <Row justify="center">
-    <Col span={20}>
+    <Col  xs={20} sm={22} span={20}>
     <div>
     <h1 className="title">Press</h1>
     </div>

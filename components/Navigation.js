@@ -16,7 +16,7 @@ const Navigation = () => {
     return (
     <>
     <Row justify="center">
-    <Col span={16}><Title className="logo">Kat Lightfoot</Title></Col>
+    <Col  xs={16} sm={18} span={16}><Title className="logo">Kat Lightfoot</Title></Col>
     <Col span={4} className="menubtn"><Button onClick={showDrawer}><MenuOutlined /></Button></Col>  
     </Row>
     <Drawer placement="right" closable={true} onClose={onClose} visible={visible} >

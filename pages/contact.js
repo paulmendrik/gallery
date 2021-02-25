@@ -9,7 +9,7 @@ export default function Contact({page}) {
         <>
         <Navigation/>
         <Row justify="center">
-        <Col span={20}>
+        <Col  xs={20} sm={22} span={20}>
         <div>
         <h1 className="title">Contact</h1>
         </div>

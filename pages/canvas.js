@@ -12,7 +12,7 @@ export default function Gallery({ items }) {
       <Meta/>
       <Navigation/>
       <Row justify="center" >
-      <Col span={20}>
+      <Col  xs={20} sm={22} span={20}>
       <div className="title">
       <h1 className="title">Canvas Prints</h1>
       <h2 className="subtitle">The canvas prints are all hand finished and signed in oil</h2>

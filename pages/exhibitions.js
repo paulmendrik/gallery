@@ -24,14 +24,14 @@ export default function About({ page}) {
         <>
         <Navigation/>
         <Row justify="center">
-        <Col span={20}>
+        <Col  xs={20} sm={22} span={20}>
         <div>
         <h1 className="title">Exhibitions</h1>
         </div>
         {page.map(exhibitions =>
         <Col key={exhibitions._id} span={24}> 
         <Row gutter={24}>
-        <Col xs={24} sm={10} span={10} className="exhibitions">
+        <Col span={10} className="exhibitions">
         <img src={urlFor(exhibitions.image).url()} alt={exhibitions.title}  /> 
         <h2>The Great Barn</h2>
         <Carousel {...settings} >
@@ -43,7 +43,7 @@ export default function About({ page}) {
         
         </Carousel>
         </Col>
-        <Col xs={24} sm={14} span={14} className="exhibitions">
+        <Col span={14} className="exhibitions">
         <BlockContent blocks={exhibitions.content} />
         </Col>
         </Row>
