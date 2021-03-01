@@ -29,7 +29,7 @@ export default function Home({ items }) {
       <Carousel {...settings}>
       {items.map(slider =>
       <div key={slider.order}>
-      <img src={urlFor(slider.slide).url()}  width={1920} height={1080}  alt="" />
+      <img src={urlFor(slider.slide).width(1200).height(675).format('webp').url()}  layout="fill" />
       </div>
       )
       }
