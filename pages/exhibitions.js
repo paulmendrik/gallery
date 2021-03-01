@@ -32,7 +32,7 @@ export default function About({ page}) {
         <Col key={exhibitions._id} span={24}> 
         <Row gutter={24}>
         <Col span={10} className="exhibitions">
-        <img src={urlFor(exhibitions.image).url()} alt={exhibitions.title}  /> 
+        <img src={urlFor(exhibitions.image).format('webp').url()} alt={exhibitions.title}  /> 
         <h2>The Great Barn</h2>
         <Carousel {...settings} >
         {exhibitions.slider.map((value, index) => (

@@ -19,8 +19,8 @@ export default function Gallery({ items }) {
       <Row className="giclee">
       {items.map(giclee =>
       <Col key={giclee._id} xs={24} sm={8} span={8}>
-      <a data-fancybox="giclee" href={urlFor(giclee.image).url()}  data-caption={giclee.details} >
-      <figure className="image is-1by1"><img src={urlFor(giclee.thumb).size(400,400).url()} />
+      <a data-fancybox="giclee" href={urlFor(giclee.image).format('webp').url()}  data-caption={giclee.details} >
+      <figure className="image is-1by1"><img src={urlFor(giclee.thumb).size(400,400).format('webp').url()} />
       </figure>
       </a>
       </Col>

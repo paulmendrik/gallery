@@ -17,7 +17,7 @@ export default function Contact({page}) {
         <div key={contact._id}>
         <Row gutter={16} className="contact" > 
         <Col xs={24} sm={10} span={10}>
-        <img  src={urlFor(contact.image).size(400,400).url()} alt={contact.title}  />  
+        <img  src={urlFor(contact.image).size(400,400).format('webp').url()} alt={contact.title}  />  
         </Col>
         <Col xs={24} sm={14} span={14}>
         <BlockContent blocks={contact.content} />
