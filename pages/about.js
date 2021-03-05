@@ -16,7 +16,7 @@ export default function About({page}) {
         <Col span={24} className="about"> 
         {page.map(about =>
         <div key={about._id}>
-        <img  src={urlFor(about.image).format('webp').url()} alt={about.title} />  
+        <img  src={urlFor(about.image).url()} alt={about.title} />  
         <BlockContent blocks={about.content} />
         </div>
         )}

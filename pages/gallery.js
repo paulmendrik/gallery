@@ -19,9 +19,9 @@ export default function Gallery({ items }) {
     <Row className="gallery">
     {items.map(gallery =>
     <Col key={gallery._id} xs={24} sm={8} span={8}>
-    <a data-fancybox="gallery" href={urlFor(gallery.image).format('webp').url()}  data-caption={gallery.details} >
+    <a data-fancybox="gallery" href={urlFor(gallery.image).url()}  data-caption={gallery.details} >
     <figure className="image is-1by1">
-   <img src={urlFor(gallery.thumb).size(400,400).format('webp').url()}  />
+   <img src={urlFor(gallery.thumb).url()}  />
    </figure>
     </a>
     </Col>

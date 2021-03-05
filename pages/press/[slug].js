@@ -17,7 +17,7 @@ export default function Article({data}) {
         <h1 className="title">{data.title}</h1>
         </div>
         <Col span={24} className="press">
-        <img src={urlFor(data.image).size(400,400).format('webp').url()} alt={data.title} />  
+        <img src={urlFor(data.image).url()} alt={data.title} />  
         <BlockContent blocks={data.content} />
         <Button><Link href="/press"><a>Back</a></Link></Button>
         </Col>
