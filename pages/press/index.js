@@ -36,7 +36,7 @@ export default function Press( {data} ) {
 }
 
 
-export async function getStaticProps() {
+export async function getStaticProps(){
   const data = await client.fetch(`
   *[_type == 'press'] {
     _id,

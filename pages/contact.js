@@ -32,7 +32,7 @@ export default function Contact({page}) {
 
 }
 
-export async function getServerSideProps(){
+export async function getStaticProps(){
   const page = await getContactPage();
   return {
     props: {

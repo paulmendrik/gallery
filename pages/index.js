@@ -42,7 +42,7 @@ export default function Home({ items }) {
 }
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const items = await getAllSlides();
   return {
     props: {

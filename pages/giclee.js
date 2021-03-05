@@ -33,7 +33,7 @@ export default function Gallery({ items }) {
     )
  }
 
- export async function getServerSideProps() {
+ export async function getStaticProps(){
     const items = await getAllGicleePrints();
     return {
       props: {
