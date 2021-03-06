@@ -37,7 +37,7 @@ export default function About({ page}) {
         <Carousel {...settings} >
         {exhibitions.slider.map((value, index) => (
         <figure key={exhibitions.slide} className="image is-1by1">
-       <img src={exhibitions.slide}  />
+       <img src={exhibitions.slide} alt="exhibitions"  />
        </figure>
         ))}
         

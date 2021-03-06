@@ -29,7 +29,7 @@ export default function Home({ items }) {
       <Carousel {...settings}>
       {items.map(slider =>
       <div key={slider.order}>
-      <img src={urlFor(slider.slide).url()} />
+      <img src={urlFor(slider.slide).url()} alt="kat lightfoot" />
       </div>
       )
       }
